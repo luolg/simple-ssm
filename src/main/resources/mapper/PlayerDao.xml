@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.luolg.dao.PlayerDao">
+
+    <select id="queryAllPlayers" resultType="Player">
+        SELECT id,
+               name,
+               team,
+               number
+        FROM players
+        ORDER BY id
+
+    </select>
+
+
+    <insert id="addPlayer" parameterType="Player" >
+        INSERT INTO players (name , team, number)
+        VALUES (#{name}, #{team}, #{number})
+    </insert>
+
+
+</mapper>
